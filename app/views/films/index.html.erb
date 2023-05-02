@@ -1,0 +1,21 @@
+<h1>Film list</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Year</th>
+    <th>Open</th>
+  </tr>
+  <% @film.each do |film| %>
+    <tr>
+      <td> <%= film.id %> </td>
+      <td> <%= film.name %> </td>
+      <td> <%= film.year %> </td>
+      <td> <%= link_to('Open', film_path(film)) %> </td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%== pagy_nav(@pagy) %>
